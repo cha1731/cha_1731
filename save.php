@@ -32,7 +32,7 @@ $newItem = [
 
 $students[] = $newItem;
 
-file_put_contents($file, json_encode($notes, JSON_PRETTY_PRINT));
+file_put_contents($file, json_encode($students, JSON_PRETTY_PRINT));
 
 header("Location: index.php");
 exit();

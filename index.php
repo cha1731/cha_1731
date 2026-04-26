@@ -8,18 +8,18 @@
 </head>
 <body>
 <div class="container">
-<h1>Student Note App</h1>
-<p class="subtitle">Enter a student name and a short note.</p>
+<h1>Student Grade App</h1>
+<p class="subtitle">Enter student information and grade.</p>
 
 <form action="save.php" method="post" onsubmit="return validateForm();">
 <label for="name">Student name</label>
-<input type="text" id="name" name="name" placeholder="Enter name">
+<input type="text" id="name" name="name" placeholder="Enter student name">
 
 <label for="subject">subject</label>
-<input type="text" id="subject" name="subject" placeholder="Enter short note">
+<input type="text" id="subject" name="subject" placeholder="Enter subject">
 
 <label for="professor">professor</label>
-<input type="text" id="professor" name="professor" placeholder="Enter name">
+<input type="text" id="professor" name="professor" placeholder="Enter professor name">
 
 <label for="grade">grade</label>
 <select id="grade" name="grade">
@@ -32,7 +32,7 @@
 </select>
 
 <br><br>
-<button type="submit">Save Note</button>
+<button type="submit">Save grade</button>
 </form>
 
 <h2>Saved Notes</h2>
