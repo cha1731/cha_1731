@@ -1,14 +1,11 @@
 function validateForm() {
 const name = document.getElementById("name").value.trim();
-const note = document.getElementById("note").value.trim();
+const subject = document.getElementById("subject").value.trim();
+const professor = document.getElementById("professor").value.trim();
+const grade = document.getElementById("grade").value.trim();
 
-if (name === "" || note === "") {
+if (name === "" || subject === "" || professor === "" || grade ===) {
 alert("Please fill in both fields.");
-return false;
-}
-
-if (note.length > 50) {
-alert("Note must be 50 characters or less.");
 return false;
 }
 

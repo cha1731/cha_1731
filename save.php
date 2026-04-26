@@ -1,8 +1,10 @@
 <?php
 $name = trim($_POST["name"] ?? "");
-$note = trim($_POST["note"] ?? "");
+$subject = trim($_POST["subject"] ?? "");
+$professor = trim($_POST["professor"] ?? "");
+$grade = trim($_POST["grade"] ?? "");
 
-if ($name === "" || $note === "") {
+if ($name === "" || $subject === "" || $professor === "" || $grade === "")  {
     header("Location: index.php");
     exit();
 }
@@ -11,21 +13,24 @@ $file = "data.json";
 
 if (file_exists($file)) {
     $data = file_get_contents($file);
-    $notes = json_decode($data, true);
+    $students = json_decode($data, true);
 
-    if (!is_array($notes)) {
-        $notes = [];
+    if (!is_array($students)) {
+        $students = [];
     }
 } else {
-    $notes = [];
+    $students = [];
 }
 
 $newItem = [
     "name" => $name,
-    "note" => $note
+    "subject" => $subject,
+    "professor" => $professor,
+    "grade" => $grade
+
 ];
 
-$notes[] = $newItem;
+$students[] = $newItem;
 
 file_put_contents($file, json_encode($notes, JSON_PRETTY_PRINT));
 

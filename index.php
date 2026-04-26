@@ -12,12 +12,26 @@
 <p class="subtitle">Enter a student name and a short note.</p>
 
 <form action="save.php" method="post" onsubmit="return validateForm();">
-<label for="name">Student Name</label>
+<label for="name">Student name</label>
 <input type="text" id="name" name="name" placeholder="Enter name">
 
-<label for="note">Note</label>
-<input type="text" id="note" name="note" placeholder="Enter short note">
+<label for="subject">subject</label>
+<input type="text" id="subject" name="subject" placeholder="Enter short note">
 
+<label for="professor">professor</label>
+<input type="text" id="professor" name="professor" placeholder="Enter name">
+
+<label for="grade">grade</label>
+<select id="grade" name="grade">
+<option value="">Select grade</option>
+<option value="A">A</option>
+<option value="B">B</option>
+<option value="C">C</option>
+<option value="D">D</option>
+<option value="F">F</option>
+</select>
+
+<br><br>
 <button type="submit">Save Note</button>
 </form>
 
