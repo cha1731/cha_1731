@@ -41,30 +41,34 @@
 $file = "data.json";
 
 if (file_exists($file)) {
-$data = file_get_contents($file);
-$notes = json_decode($data, true);
+    $data = file_get_contents($file);
+    $students = json_decode($data, true);
 
-if (!empty($notes)) {
-echo "<ul>";
-foreach ($students as $item) {
-
-$safeName = htmlspecialchars($item["name"] ?? "");
-$safeSubject = htmlspecialchars($item["subject"] ?? "");
-$safeProfessor = htmlspecialchars($item["professor"] ?? "");
-$safeGrade = htmlspecialchars($item["grade"] ?? "");
-
-echo "<li>";
-echo "<strong>$safeName</strong><br>";
-echo "Subject: $safeSubject<br>";
-echo "Professor: $safeProfessor<br>";
-echo "Grade: $safeGrade";
-echo "</li><br>";
+    if (!is_array($students)) {
+        $students = [];
+    }
+} else {
+    $students = [];
 }
 
-echo "</ul>";
+if (!empty($students)) {
+    echo "<ul>";
+    foreach ($students as $item) {
+        $safeName = htmlspecialchars($item["name"] ?? "");
+        $safeSubject = htmlspecialchars($item["subject"] ?? "");
+        $safeProfessor = htmlspecialchars($item["professor"] ?? "");
+        $safeGrade = htmlspecialchars($item["grade"] ?? "");
 
+        echo "<li>";
+        echo "<strong>$safeName</strong><br>";
+        echo "Subject: $safeSubject<br>";
+        echo "Professor: $safeProfessor<br>";
+        echo "Grade: $safeGrade";
+        echo "</li><br>";
+    }
+    echo "</ul>";
 } else {
-echo "<p>No data yet.</p>";
+    echo "<p>No data yet.</p>";
 }
 ?>
 </div>
