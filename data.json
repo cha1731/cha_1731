@@ -10,5 +10,11 @@
         "subject": "math",
         "professor": "duna",
         "grade": "A"
+    },
+    {
+        "name": "IVAN",
+        "subject": "AI",
+        "professor": "CHA",
+        "grade": "A"
     }
 ]

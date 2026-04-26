@@ -17,6 +17,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
 
 h1 {
 margin-top: 0;
+color: #2d6cdf;   
 }
 
 .subtitle {
@@ -54,9 +55,10 @@ background-color: #1f57b8;
 
 .list-box {
 margin-top: 20px;
-background: #fafafa;
+background: #f0f4ff;
 padding: 16px;
 border-radius: 8px;
+border-left: 4px solid #2d6cdf;  
 }
 
 ul {
