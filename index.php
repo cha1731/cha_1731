@@ -35,7 +35,7 @@
 <button type="submit">Save grade</button>
 </form>
 
-<h2>Saved Notes</h2>
+<h2>Saved students</h2>
 <div class="list-box">
 <?php
 $file = "data.json";
@@ -46,17 +46,25 @@ $notes = json_decode($data, true);
 
 if (!empty($notes)) {
 echo "<ul>";
-foreach ($notes as $item) {
-$safeName = htmlspecialchars($item["name"]);
-$safeNote = htmlspecialchars($item["note"]);
-echo "<li><strong>$safeName</strong>: $safeNote</li>";
+foreach ($students as $item) {
+
+$safeName = htmlspecialchars($item["name"] ?? "");
+$safeSubject = htmlspecialchars($item["subject"] ?? "");
+$safeProfessor = htmlspecialchars($item["professor"] ?? "");
+$safeGrade = htmlspecialchars($item["grade"] ?? "");
+
+echo "<li>";
+echo "<strong>$safeName</strong><br>";
+echo "Subject: $safeSubject<br>";
+echo "Professor: $safeProfessor<br>";
+echo "Grade: $safeGrade";
+echo "</li><br>";
 }
+
 echo "</ul>";
+
 } else {
-echo "<p>No notes yet.</p>";
-}
-} else {
-echo "<p>No notes yet.</p>";
+echo "<p>No data yet.</p>";
 }
 ?>
 </div>
